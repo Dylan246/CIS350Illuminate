@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
 
-
     // actions that will be done by the player
     private InputAction move;
     private InputAction jump;
@@ -15,14 +14,15 @@ public class PlayerController : MonoBehaviour
 
     // variable to check if player is moving or not
     private bool isPlayerMoving;
-    // reference for this boolean:
-    [SerializeField] private GameObject player;
 
     // variable for how fast the player will move
     [SerializeField] private float playerSpeed;
+    [SerializeField] private float jumpForce;
 
     // direction for player
     private float moveDirection;
+
+    private bool isJumping;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +31,22 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(isPlayerMoving)
         {
             moveDirection = move.ReadValue<float>();
+            GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed * moveDirection, GetComponent<Rigidbody2D>().velocity.y);
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        }
+
+        if(isJumping)
+        {
+            isJumping = false;
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
         }
     }
 
@@ -56,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump_started(InputAction.CallbackContext obj)
     {
-        
+        isJumping = true;
     }
 
     private void Move_canceled(InputAction.CallbackContext obj)
