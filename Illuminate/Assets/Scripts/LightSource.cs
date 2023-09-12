@@ -14,7 +14,7 @@ public class LightSource : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindObjectOfType<PlayerController>().gameObject;
+        player = FindObjectOfType<PlayerController>().gameObject;
         if(LightType == SourceType.Sphere || LightType == SourceType.Cone)
         {
             radius = GetComponent<Light2D>().pointLightOuterRadius;
@@ -26,23 +26,20 @@ public class LightSource : MonoBehaviour
     {
         if(LightType == SourceType.Sphere)
         {
-            print(IsSphereDetectingPlayer());
-        }
-        else if(LightType == SourceType.Cone)
-        {
-            print(IsConeDetectingPlayer());
+            player.GetComponent<PlayerController>().isInLight = IsSphereDetectingPlayer();
         }
     }
 
     bool IsSphereDetectingPlayer()
     {
-        try
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            player.transform.position - transform.position, radius);
-            Debug.DrawRay(transform.position,
-                player.transform.position - transform.position, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position,
+            player.transform.position - transform.position, radius, ~LayerMask.GetMask("Light"));
 
+        Debug.DrawRay(transform.position,
+            player.transform.position - transform.position, Color.red);
+
+        if(hit == true)
+        {
             if(hit.collider.tag == "Player")
             {
                 return true;
@@ -52,48 +49,43 @@ public class LightSource : MonoBehaviour
                 return false;
             }
         }
-        catch
+
+        return false;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "Player")
         {
-            return false;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position,
+            player.transform.position - transform.position, radius, ~LayerMask.GetMask("Light"));
+
+            Debug.DrawRay(transform.position,
+                    player.transform.position - transform.position, Color.red);
+
+            if (hit == true)
+            {
+                if (hit.collider.tag == "Player")
+                {
+                    player.GetComponent<PlayerController>().isInLight = true;
+                }
+                else
+                {
+                    player.GetComponent<PlayerController>().isInLight = false;
+                }
+            }
+            else
+            {
+                player.GetComponent<PlayerController>().isInLight = false;
+            }
         }
     }
 
-    bool IsConeDetectingPlayer()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        try
+        if(collision.gameObject.name == "Player")
         {
-            Debug.DrawRay(transform.position,
-                Vector3.forward + new Vector3(radius, 0, 0), Color.red);
-            Debug.DrawRay(transform.position,
-                Vector3.forward + new Vector3(radius, -2.2f, 0), Color.red);
-            Debug.DrawRay(transform.position,
-                Vector3.forward + new Vector3(radius, 2.2f, 0), Color.red);
-
-            RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            Vector3.forward + new Vector3(radius, 0, 0), radius);
-            if (hit.collider.tag == "Player")
-            {
-                return true;
-            }
-            RaycastHit2D hit2 = Physics2D.Raycast(transform.position,
-            Vector3.forward + new Vector3(radius, -2.2f, 0), radius);
-            if (hit2.collider.tag == "Player")
-            {
-                return true;
-            }
-            RaycastHit2D hit3 = Physics2D.Raycast(transform.position,
-            Vector3.forward + new Vector3(radius, 2.2f, 0), radius);
-            if (hit3.collider.tag == "Player")
-            {
-                return true;
-            }
-
-            return false;
-        }
-        catch
-        {
-            print("fuck");
-            return false;
+            player.GetComponent<PlayerController>().isInLight = false;
         }
     }
 }

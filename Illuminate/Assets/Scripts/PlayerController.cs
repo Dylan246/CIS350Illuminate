@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isJumping;
 
+    public bool isInLight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
         }
+
+        print(isInLight);
     }
 
     // function that enables action inputs to be read
