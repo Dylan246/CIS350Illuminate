@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,6 @@ public class PlayerController : MonoBehaviour
     // actions that will be done by the player
     private InputAction move;
     private InputAction jump;
-    private InputAction death;
 
     // variable to check if player is moving or not
     private bool isPlayerMoving;
@@ -26,10 +26,26 @@ public class PlayerController : MonoBehaviour
 
     public bool isInLight;
 
+    // temporary placeholder variable for point of player death
+    // upon falling (don't know yet what's the exact point of death)
+    private int placeHoldPointOfDeath;
+
     // Start is called before the first frame update
     void Start()
     {
         EnableInputs();
+
+        isPlayerMoving = false;
+        isJumping = false;
+    }
+
+    void Update()
+    {
+        // checks to see if player has fallen to their death
+        if(gameObject.transform.position.y < placeHoldPointOfDeath)
+        {
+            RespawnPlayer();
+        }
     }
 
     // Update is called once per frame
@@ -83,4 +99,22 @@ public class PlayerController : MonoBehaviour
     {
         isPlayerMoving = true;
     }
+
+    public void OnDestroy()
+    {
+        move.started -= Move_started;
+        move.canceled -= Move_canceled;
+        jump.started -= Jump_started;
+    }
+
+    // method to respawn player upon falling to death
+    private void RespawnPlayer()
+    {
+        // player will be reset to a certain position on screen
+        // (don't know where yet)
+
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        isPlayerMoving = false;
+    }
 }
+
