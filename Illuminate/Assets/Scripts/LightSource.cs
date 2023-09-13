@@ -11,6 +11,8 @@ public class LightSource : MonoBehaviour
     private GameObject player;
 
     private float radius;
+
+    public bool playerIsInLight = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class LightSource : MonoBehaviour
     {
         if(LightType == SourceType.Sphere)
         {
-            player.GetComponent<PlayerController>().isInLight = IsSphereDetectingPlayer();
+            playerIsInLight = IsSphereDetectingPlayer();
         }
     }
 
@@ -67,16 +69,16 @@ public class LightSource : MonoBehaviour
             {
                 if (hit.collider.tag == "Player")
                 {
-                    player.GetComponent<PlayerController>().isInLight = true;
+                    playerIsInLight = true;
                 }
                 else
                 {
-                    player.GetComponent<PlayerController>().isInLight = false;
+                    playerIsInLight = false;
                 }
             }
             else
             {
-                player.GetComponent<PlayerController>().isInLight = false;
+                playerIsInLight = false;
             }
         }
     }
@@ -85,7 +87,7 @@ public class LightSource : MonoBehaviour
     {
         if(collision.gameObject.name == "Player")
         {
-            player.GetComponent<PlayerController>().isInLight = false;
+            playerIsInLight = false;
         }
     }
 }
