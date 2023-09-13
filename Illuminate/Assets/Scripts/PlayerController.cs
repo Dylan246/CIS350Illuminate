@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
                 HeldItem.gameObject.transform.localPosition = new Vector3(0, 0, 0);
                 HeldItem.gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
                 HeldItem.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                HeldItem.gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 HeldItem.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 HeldItem.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
@@ -103,6 +104,7 @@ public class PlayerController : MonoBehaviour
             {
                 HeldItem.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
                 HeldItem.gameObject.transform.SetParent(null);
+                HeldItem.gameObject.GetComponent<CircleCollider2D>().enabled = true;
                 HeldItem.gameObject.GetComponent<BoxCollider2D>().enabled = true;
                 canPickUp = HeldItem;
                 HeldItem = null;
@@ -112,7 +114,7 @@ public class PlayerController : MonoBehaviour
         
 
         CheckIfInLight();
-        //print(isInLight);
+        print(isInLight);
     }
 
     // function that enables action inputs to be read
