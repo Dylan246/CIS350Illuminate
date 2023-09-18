@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Animations;
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public PickUp HeldItem;
 
     public Holder playerHolder;
+    private Animator stickman;
 
     // temporary placeholder variable for point of player death
     // upon falling (don't know yet what's the exact point of death)
@@ -47,6 +49,9 @@ public class PlayerController : MonoBehaviour
         EnableInputs();
 
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
+        stickman = GetComponent<Animator>();
+        stickman.SetBool("move_player", isPlayerMoving);
+        stickman.SetBool("jump_player", isJumping);
 
         isPlayerMoving = false;
         isJumping = false;
@@ -68,7 +73,8 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection = move.ReadValue<float>();
             GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed * moveDirection, GetComponent<Rigidbody2D>().velocity.y);
-        }
+            
+}
         else
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
@@ -78,6 +84,7 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+            
         }
 
         if(isEquiping)

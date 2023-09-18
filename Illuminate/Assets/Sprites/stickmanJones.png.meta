@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,679 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: stickmanJones_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3099
+        width: 387
+        height: 948
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7274829bf24fe44896c09b9a95db15
+      internalID: 540075065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_1
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 3099
+        width: 388
+        height: 948
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093970521515d594bae9be4eb7c0e495
+      internalID: -1811736427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_2
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 3099
+        width: 388
+        height: 948
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae82a512c3d34fa45b010a6ee68127c0
+      internalID: 1861902265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_3
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 3099
+        width: 388
+        height: 948
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a966ad958361cb24e80049149dfbbcf7
+      internalID: -562291547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_4
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 3099
+        width: 388
+        height: 974
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb74bcee4cd66f408256e1e54ff5b3c
+      internalID: -1549272026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_5
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 3099
+        width: 388
+        height: 974
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e94b90f03c2e324e827ca066f783ee9
+      internalID: -713644863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_6
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 3099
+        width: 388
+        height: 974
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7c1c109f49114478151070deb1082e
+      internalID: 251405005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_7
+      rect:
+        serializedVersion: 2
+        x: 2749
+        y: 3099
+        width: 388
+        height: 974
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa7b665e0c066541acc4063cb9acfff
+      internalID: -1340212774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_8
+      rect:
+        serializedVersion: 2
+        x: 3141
+        y: 3101
+        width: 390
+        height: 995
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4c5832981795742bed57a6c3b36ccb
+      internalID: 1606283481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_9
+      rect:
+        serializedVersion: 2
+        x: 3535
+        y: 3099
+        width: 388
+        height: 997
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9206a926eadc6c64e8b0a07bc0c14396
+      internalID: 218642353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2095
+        width: 387
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ce508333b83614baed9a66f69e2b2c
+      internalID: -1093183520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_11
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 2095
+        width: 388
+        height: 1000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109c94dc140fe7145b62cf87b199cba7
+      internalID: 1378024526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_12
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 2095
+        width: 388
+        height: 996
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc523d11f5dbde4792de928857da46d
+      internalID: -731212612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_13
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 2095
+        width: 388
+        height: 996
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f556902049b2241bbc5a97a1867f3a
+      internalID: -959881804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_14
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 2095
+        width: 388
+        height: 996
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5169828f2ebf50e409e3a0a398626ce2
+      internalID: 318765842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_15
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 2095
+        width: 388
+        height: 996
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5607c72f43ec4e47a27d1783efe45b5
+      internalID: -1526625597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_16
+      rect:
+        serializedVersion: 2
+        x: 2355
+        y: 2165
+        width: 518
+        height: 928
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061b96faaa29c924285c32d0556b6031
+      internalID: 699250965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_17
+      rect:
+        serializedVersion: 2
+        x: 2877
+        y: 2165
+        width: 516
+        height: 928
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f5bf8458b0ebd448df8b6d28d8f3d5
+      internalID: -703598011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_18
+      rect:
+        serializedVersion: 2
+        x: 3397
+        y: 2166
+        width: 518
+        height: 927
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e521e6a6ef929f4fac542f312444455
+      internalID: 741132351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1161
+        width: 515
+        height: 930
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee00277817d80b0439b4a469644b4342
+      internalID: 1945725518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_20
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1129
+        width: 494
+        height: 952
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e49559cb9f901c43804a9438013ad5a
+      internalID: 657825999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_21
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 1129
+        width: 494
+        height: 952
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e529e307657e5324f9e9aea71f4b02ca
+      internalID: -1056037134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_22
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1129
+        width: 494
+        height: 952
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786456d28215b0f4aabbd56f9bcd8097
+      internalID: 1078092768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_23
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 1129
+        width: 494
+        height: 952
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276287993ab25924486fe56e4bc119e7
+      internalID: -1791737303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_24
+      rect:
+        serializedVersion: 2
+        x: 2603
+        y: 1251
+        width: 660
+        height: 816
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7e7397dde255f4f89b9ff4d5ff9db5
+      internalID: 1251038479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_25
+      rect:
+        serializedVersion: 2
+        x: 3283
+        y: 1253
+        width: 664
+        height: 814
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34431444e2725de469e7c45b3f3abc02
+      internalID: -1622672204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_26
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 221
+        width: 646
+        height: 880
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ace2f77bb997f4da5547163829abec
+      internalID: -816170661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_27
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 221
+        width: 644
+        height: 880
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d752f8272722c8438ce579d4be220ca
+      internalID: -732342647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_28
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 207
+        width: 610
+        height: 916
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb02cf11c6278f469cfa35ddadb6ff7
+      internalID: 37521512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_29
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 207
+        width: 612
+        height: 916
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d08f05b622dbe469aefc7764b3c23d
+      internalID: -811601887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_30
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 219
+        width: 564
+        height: 904
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad218dae49270e47aa2f2a93e639502
+      internalID: 1690096636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_31
+      rect:
+        serializedVersion: 2
+        x: 3479
+        y: 217
+        width: 592
+        height: 906
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237b0ab1e7a9a2846b89ace1d856f1e7
+      internalID: -851573721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +791,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      stickmanJones_0: 540075065
+      stickmanJones_1: -1811736427
+      stickmanJones_10: -1093183520
+      stickmanJones_11: 1378024526
+      stickmanJones_12: -731212612
+      stickmanJones_13: -959881804
+      stickmanJones_14: 318765842
+      stickmanJones_15: -1526625597
+      stickmanJones_16: 699250965
+      stickmanJones_17: -703598011
+      stickmanJones_18: 741132351
+      stickmanJones_19: 1945725518
+      stickmanJones_2: 1861902265
+      stickmanJones_20: 657825999
+      stickmanJones_21: -1056037134
+      stickmanJones_22: 1078092768
+      stickmanJones_23: -1791737303
+      stickmanJones_24: 1251038479
+      stickmanJones_25: -1622672204
+      stickmanJones_26: -816170661
+      stickmanJones_27: -732342647
+      stickmanJones_28: 37521512
+      stickmanJones_29: -811601887
+      stickmanJones_3: -562291547
+      stickmanJones_30: 1690096636
+      stickmanJones_31: -851573721
+      stickmanJones_4: -1549272026
+      stickmanJones_5: -713644863
+      stickmanJones_6: 251405005
+      stickmanJones_7: -1340212774
+      stickmanJones_8: 1606283481
+      stickmanJones_9: 218642353
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
