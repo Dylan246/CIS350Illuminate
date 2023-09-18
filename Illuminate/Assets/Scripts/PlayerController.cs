@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private InputAction jump;
     private InputAction equip;
     private InputAction dequip;
+    private InputAction restart;
+    private InputAction quit;
 
     // variable to check if player is moving or not
     private bool isPlayerMoving;
@@ -21,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // variable for how fast the player will move
     [SerializeField] private float playerSpeed;
     [SerializeField] private float jumpForce;
+    private bool canJump;
 
     // direction for player
     private float moveDirection;
@@ -69,7 +69,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(isPlayerMoving)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position,
+            Vector2.down, 1.025f, LayerMask.GetMask("Platform"));
+
+        Debug.DrawRay(transform.position,
+                Vector2.down, Color.magenta);
+
+        if(hit == true)
+        {
+            canJump = true;
+        }
+        else
+        {
+            canJump = false;
+        }
+
+        if (isPlayerMoving)
         {
             moveDirection = move.ReadValue<float>();
             GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed * moveDirection, GetComponent<Rigidbody2D>().velocity.y);
@@ -80,11 +95,11 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
         }
 
-        if(isJumping)
+        if(isJumping && canJump)
         {
+            canJump = false;
             isJumping = false;
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
-            
         }
 
         if(isEquiping)
@@ -135,17 +150,31 @@ public class PlayerController : MonoBehaviour
         jump = playerInput.currentActionMap.FindAction("Jump");
         equip = playerInput.currentActionMap.FindAction("Equip");
         dequip = playerInput.currentActionMap.FindAction("Dequip");
+        quit = playerInput.currentActionMap.FindAction("Quit");
+        restart = playerInput.currentActionMap.FindAction("Restart");
 
         move.started += Move_started;
         move.canceled += Move_canceled;
         jump.started += Jump_started;
         equip.started += Equip_started;
         dequip.started += Dequip_started;
+        quit.started += Quit_started;
+        restart.started += Restart_started;
     }
 
     private void Jump_started(InputAction.CallbackContext obj)
     {
         isJumping = true;
+    }
+
+    private void Restart_started(InputAction.CallbackContext obj)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void Quit_started(InputAction.CallbackContext obj)
+    {
+        Application.Quit();
     }
 
     private void Equip_started(InputAction.CallbackContext obj)
