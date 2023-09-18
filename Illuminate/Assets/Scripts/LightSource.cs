@@ -7,6 +7,8 @@ public class LightSource : MonoBehaviour
 {
     public enum SourceType { Cone, Sphere };
     public SourceType LightType;
+    public bool doesItFlicker;
+    private bool currentlyOn;
 
     private GameObject player;
 
@@ -16,10 +18,16 @@ public class LightSource : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentlyOn = true;
         player = FindObjectOfType<PlayerController>().gameObject;
         if(LightType == SourceType.Sphere || LightType == SourceType.Cone)
         {
             radius = GetComponent<Light2D>().pointLightOuterRadius;
+        }
+
+        if(doesItFlicker)
+        {
+            InvokeRepeating(nameof(FlickerLight), 1f, 3f);
         }
     }
 
@@ -89,5 +97,12 @@ public class LightSource : MonoBehaviour
         {
             playerIsInLight = false;
         }
+    }
+
+    void FlickerLight()
+    {
+        currentlyOn = !currentlyOn;
+        gameObject.GetComponent<Light2D>().enabled = currentlyOn;
+        gameObject.GetComponent<PolygonCollider2D>().enabled = currentlyOn;
     }
 }
