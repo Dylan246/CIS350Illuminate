@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public Holder playerHolder;
     private Animator stickman;
 
+    [SerializeField] [Range(0, 1f)] private float timeTillDead = 1f;
+
     // temporary placeholder variable for point of player death
     // upon falling (don't know yet what's the exact point of death)
     private int placeHoldPointOfDeath;
@@ -49,9 +51,9 @@ public class PlayerController : MonoBehaviour
         EnableInputs();
 
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
-        stickman = GetComponent<Animator>();
+        /*stickman = GetComponent<Animator>();
         stickman.SetBool("move_player", isPlayerMoving);
-        stickman.SetBool("jump_player", isJumping);
+        stickman.SetBool("jump_player", isJumping);*/
 
         isPlayerMoving = false;
         isJumping = false;
@@ -133,10 +135,21 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        
-
         CheckIfInLight();
-        print(isInLight);
+
+        if(isInLight && timeTillDead <= 1f)
+        {
+            timeTillDead += Time.deltaTime;
+        }
+        else
+        {
+            timeTillDead -= Time.deltaTime;
+        }
+
+        if(timeTillDead <= 0f)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     // function that enables action inputs to be read
@@ -224,6 +237,7 @@ public class PlayerController : MonoBehaviour
                 output = true;
             }
         }
+
         isInLight = output;
     }
 }
