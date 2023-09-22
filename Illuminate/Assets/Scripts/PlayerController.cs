@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,9 @@ public class PlayerController : MonoBehaviour
     // variable to check if player is moving or not
     private bool isPlayerMoving;
 
+    // boolean to check if player died
+    public bool DidPlayerDie;
+
     // variable for how fast the player will move
     [SerializeField] private float playerSpeed;
     [SerializeField] private float jumpForce;
@@ -29,6 +33,9 @@ public class PlayerController : MonoBehaviour
     private bool isEquiping;
     private bool isDequiping;
 
+    private bool isEquipped;
+    private bool isUnequipped;
+
     public bool isInLight;
 
     public PickUp canPickUp;
@@ -39,9 +46,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] [Range(0, 1f)] private float timeTillDead = 1f;
 
-    // temporary placeholder variable for point of player death
-    // upon falling (don't know yet what's the exact point of death)
-    private int placeHoldPointOfDeath;
+    
+
+    // variables to get the initial player spawn point for every level (will help with respawning)
+    private float initialSpawnPointX;
+    private float initialSpawnPointY;
 
     [SerializeField] private LightSource[] sourcesInScene;
 
@@ -50,6 +59,10 @@ public class PlayerController : MonoBehaviour
     {
         EnableInputs();
 
+        // getting initial spawn point of character
+        initialSpawnPointX = gameObject.transform.position.x;
+        initialSpawnPointY = gameObject.transform.position.y;
+
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
         /*stickman = GetComponent<Animator>();
         stickman.SetBool("move_player", isPlayerMoving);
@@ -57,15 +70,25 @@ public class PlayerController : MonoBehaviour
 
         isPlayerMoving = false;
         isJumping = false;
+
+        DidPlayerDie = false;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PointOfDeath")
+        {
+            DidPlayerDie = true;
+            RespawnPlayer();
+        }
     }
 
     void Update()
     {
-        // checks to see if player has fallen to their death
-        /*if(gameObject.transform.position.y < placeHoldPointOfDeath)
-        {
-            RespawnPlayer();
-        }*/
+       
+
+        
+       
     }
 
     // Update is called once per frame
@@ -118,6 +141,7 @@ public class PlayerController : MonoBehaviour
                 HeldItem.gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 HeldItem.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 HeldItem.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                
             }
         }
 
@@ -132,6 +156,7 @@ public class PlayerController : MonoBehaviour
                 HeldItem.gameObject.GetComponent<BoxCollider2D>().enabled = true;
                 canPickUp = HeldItem;
                 HeldItem = null;
+                
             }
         }
 
@@ -215,16 +240,24 @@ public class PlayerController : MonoBehaviour
         move.started -= Move_started;
         move.canceled -= Move_canceled;
         jump.started -= Jump_started;
+        equip.started -= Equip_started;
+        dequip.started -= Dequip_started;
+        quit.started -= Quit_started;
+        restart.started -= Restart_started;
     }
 
     // method to respawn player upon falling to death
     private void RespawnPlayer()
     {
-        // player will be reset to a certain position on screen
-        // (don't know where yet)
+        // player will be reset back to their initial starting position on screen
+        GetComponent<Rigidbody2D>().position = new Vector2(initialSpawnPointX, initialSpawnPointY);
 
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         isPlayerMoving = false;
+        DidPlayerDie = false;
+
+        
+
     }
 
     private void CheckIfInLight()
