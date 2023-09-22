@@ -33,8 +33,7 @@ public class PlayerController : MonoBehaviour
     private bool isEquiping;
     private bool isDequiping;
 
-    private bool isEquipped;
-    private bool isUnequipped;
+    
 
     public bool isInLight;
 
@@ -48,9 +47,7 @@ public class PlayerController : MonoBehaviour
 
     
 
-    // variables to get the initial player spawn point for every level (will help with respawning)
-    private float initialSpawnPointX;
-    private float initialSpawnPointY;
+    
 
     [SerializeField] private LightSource[] sourcesInScene;
 
@@ -59,9 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         EnableInputs();
 
-        // getting initial spawn point of character
-        initialSpawnPointX = gameObject.transform.position.x;
-        initialSpawnPointY = gameObject.transform.position.y;
+        
 
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
         /*stickman = GetComponent<Animator>();
@@ -79,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "PointOfDeath")
         {
             DidPlayerDie = true;
-            RespawnPlayer();
+            
         }
     }
 
@@ -246,19 +241,8 @@ public class PlayerController : MonoBehaviour
         restart.started -= Restart_started;
     }
 
-    // method to respawn player upon falling to death
-    private void RespawnPlayer()
-    {
-        // player will be reset back to their initial starting position on screen
-        GetComponent<Rigidbody2D>().position = new Vector2(initialSpawnPointX, initialSpawnPointY);
-
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        isPlayerMoving = false;
-        DidPlayerDie = false;
-
-        
-
-    }
+   
+   
 
     private void CheckIfInLight()
     {
