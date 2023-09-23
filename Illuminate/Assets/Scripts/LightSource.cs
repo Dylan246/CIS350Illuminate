@@ -13,20 +13,16 @@ public class LightSource : MonoBehaviour
 
     private GameObject player;
 
-    private PlayerController playerController;
 
     private float radius;
 
-    // variables holding spawn points for light sources
-    private float lightSourceSpawnX;
-    private float lightSourceSpawnY;
+    
 
     public bool playerIsInLight = false;
     // Start is called before the first frame update
     void Start()
     {
-        lightSourceSpawnX = gameObject.transform.position.x;
-        lightSourceSpawnY = gameObject.transform.position.y;
+        
 
        
 
@@ -114,13 +110,6 @@ public class LightSource : MonoBehaviour
     }
 
    
-
-    private void RespawnLight()
-    {
-        // light will be reset back to its initial spawn point once the player dies
-        GetComponent<Rigidbody2D>().position = new Vector2(lightSourceSpawnX, lightSourceSpawnY);
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-    }
 
     void FlickerLight()
     {

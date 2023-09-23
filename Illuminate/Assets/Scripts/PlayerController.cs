@@ -18,9 +18,6 @@ public class PlayerController : MonoBehaviour
     // variable to check if player is moving or not
     private bool isPlayerMoving;
 
-    // boolean to check if player died
-    public bool DidPlayerDie;
-
     // variable for how fast the player will move
     [SerializeField] private float playerSpeed;
     [SerializeField] private float jumpForce;
@@ -66,14 +63,14 @@ public class PlayerController : MonoBehaviour
         isPlayerMoving = false;
         isJumping = false;
 
-        DidPlayerDie = false;
+        
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PointOfDeath")
         {
-            DidPlayerDie = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
         }
     }
