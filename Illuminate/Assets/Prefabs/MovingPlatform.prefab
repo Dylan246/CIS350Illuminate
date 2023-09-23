@@ -175,3 +175,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingPlatform: {fileID: 5237597765555818126}
+  distance: 3
+  speed: 1

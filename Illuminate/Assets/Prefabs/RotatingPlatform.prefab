@@ -175,3 +175,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatingPlatform: {fileID: 8292482169157605761}
+  rotationalSpeed: 20
