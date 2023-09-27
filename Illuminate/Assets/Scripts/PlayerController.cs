@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
     private bool isEquiping;
     private bool isDequiping;
 
-    
+    private bool canPutOnHanger;
+    public GameObject hanger;
 
     public bool isInLight;
 
@@ -41,10 +42,6 @@ public class PlayerController : MonoBehaviour
     private Animator stickman;
 
     [SerializeField] [Range(0, 1f)] private float timeTillDead = 1f;
-
-    
-
-    
 
     [SerializeField] private LightSource[] sourcesInScene;
 
@@ -71,7 +68,21 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "PointOfDeath")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            
+        }
+
+        if(collision.tag == "Hanger")
+        {
+            canPutOnHanger = true;
+            hanger = collision.gameObject;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Hanger")
+        {
+            canPutOnHanger = false;
+            hanger = null;
         }
     }
 
@@ -122,7 +133,29 @@ public class PlayerController : MonoBehaviour
         if(isEquiping)
         {
             isEquiping = false;
-            if(canPickUp != null)
+
+            // Taking a light off of a hanger (player cannot be holding a light)
+            if(HeldItem == null && canPutOnHanger && hanger.GetComponent<Hanger>().holdingLight != null)
+            {
+                HeldItem = hanger.GetComponent<Hanger>().holdingLight;
+                hanger.GetComponent<Hanger>().holdingLight = null;
+                HeldItem.gameObject.transform.SetParent(playerHolder.gameObject.transform);
+                HeldItem.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                HeldItem.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+                HeldItem.gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
+            }
+            // Putting a light on a hanger (player has to be holding a light and hanger cannot have a light already on)
+            else if(HeldItem != null && canPutOnHanger && hanger.GetComponent<Hanger>().holdingLight == null)
+            {
+                HeldItem.gameObject.transform.SetParent(hanger.transform);
+                HeldItem.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+                HeldItem.gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
+                HeldItem.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                hanger.GetComponent<Hanger>().holdingLight = HeldItem;
+                HeldItem = null;
+            }
+            // Picking light off ground
+            else if(canPickUp != null)
             {
                 HeldItem = canPickUp;
                 canPickUp = null;
@@ -133,7 +166,6 @@ public class PlayerController : MonoBehaviour
                 HeldItem.gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 HeldItem.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 HeldItem.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-                
             }
         }
 
@@ -153,6 +185,7 @@ public class PlayerController : MonoBehaviour
         }
 
         CheckIfInLight();
+
 
         if(isInLight && timeTillDead <= 1f)
         {
@@ -254,5 +287,7 @@ public class PlayerController : MonoBehaviour
 
         isInLight = output;
     }
+
+
 }
 
