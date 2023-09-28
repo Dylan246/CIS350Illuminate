@@ -10,6 +10,7 @@ public class LightSource : MonoBehaviour
     public bool doesItFlicker;
     private bool currentlyOn;
 
+    public bool startTurnedOff;
 
     private GameObject player;
 
@@ -22,11 +23,12 @@ public class LightSource : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-
-       
-
         currentlyOn = true;
+        if(startTurnedOff)
+        {
+            FlickerLight();
+        }
+       
         player = FindObjectOfType<PlayerController>().gameObject;
         if(LightType == SourceType.Sphere || LightType == SourceType.Cone)
         {
@@ -111,10 +113,12 @@ public class LightSource : MonoBehaviour
 
    
 
-    void FlickerLight()
+    public void FlickerLight()
     {
         currentlyOn = !currentlyOn;
         gameObject.GetComponent<Light2D>().enabled = currentlyOn;
         gameObject.GetComponent<PolygonCollider2D>().enabled = currentlyOn;
     }
+
+    
 }
