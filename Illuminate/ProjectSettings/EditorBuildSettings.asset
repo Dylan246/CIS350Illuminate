@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Level 1.unity
     guid: fd83e6d58f7f64ffd9163c13348a24fc
   - enabled: 1
     path: Assets/Scenes/DwyerScene.unity
