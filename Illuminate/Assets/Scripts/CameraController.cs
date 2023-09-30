@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+/*****************************************************************************
+// File Name : LightSource.cs
+// Author : Sam Dwyer
+//
+// Brief Description : Makes sure the camera has a max y level
+*****************************************************************************/
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

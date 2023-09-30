@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+/*****************************************************************************
+// File Name : LightSwitch.cs
+// Author : Sam Dwyer
+//
+// Brief Description : Handles a light sources' light status
+*****************************************************************************/
 using UnityEngine;
 
 public class LightSwitch : MonoBehaviour

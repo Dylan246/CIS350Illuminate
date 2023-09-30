@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+/*****************************************************************************
+// File Name : MovePlatform.cs
+// Author : Dylan Gazda
+//
+// Brief Description : Manages the movement of certain platforms
+*****************************************************************************/
 using UnityEngine;
 
 public class MovePlatform : MonoBehaviour

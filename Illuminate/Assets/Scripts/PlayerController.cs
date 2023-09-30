@@ -1,4 +1,10 @@
-using JetBrains.Annotations;
+/*****************************************************************************
+// File Name : PlayerController.cs
+// Author : Sam Dwyer
+//
+// Brief Description : Holds the player inputs, the various triggers that the player can interact with,
+//                     player movement, player interactions with lights, and death
+*****************************************************************************/
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -7,7 +13,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
 
-    // actions that will be done by the player
+    // Actions that will be done by the player
     private InputAction move;
     private InputAction jump;
     private InputAction equip;
@@ -15,54 +21,63 @@ public class PlayerController : MonoBehaviour
     private InputAction restart;
     private InputAction quit;
 
-    // variable to check if player is moving or not
+    // Variable to check if player is moving or not
     private bool isPlayerMoving;
 
-    // variable for how fast the player will move
+    // Variable for how fast the player will move
     [SerializeField] private float playerSpeed;
     [SerializeField] private float jumpForce;
     private bool canJump;
 
-    // direction for player
+    // Direction for player
     private float moveDirection;
 
+    // Bools for player actions
     private bool isJumping;
     private bool isEquiping;
     private bool isDequiping;
 
+    // Hanger variables
     private bool canPutOnHanger;
     public GameObject hanger;
 
+    // Bool determining if the player is in light
     public bool isInLight;
 
+    // Pick Up variables
     public PickUp canPickUp;
     public PickUp HeldItem;
 
+    // Animation variables
     public Holder playerHolder;
     private Animator stickman;
 
+    // Grace period in darkness
     [SerializeField] [Range(0, 1f)] private float timeTillDead = 1f;
 
+    // The light sources in the scene
     [SerializeField] private LightSource[] sourcesInScene;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Turn on all inputs
         EnableInputs();
 
-        
-
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
+
         /*stickman = GetComponent<Animator>();
         stickman.SetBool("move_player", isPlayerMoving);
         stickman.SetBool("jump_player", isJumping);*/
 
         isPlayerMoving = false;
         isJumping = false;
-
-        
     }
 
+    /// <summary>
+    /// Trigger for when the player triggers a hanger or death barrier
+    /// </summary>
+    /// <param name="collision"></param>
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PointOfDeath")
@@ -77,6 +92,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Trigger for when the player leaves a hanger
+    /// </summary>
+    /// <param name="collision"></param>
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Hanger")
@@ -86,19 +105,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-       
-
-        
-       
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
+        // Detection for when a player is on ground (resets jump)
         RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            Vector2.down, 1.025f, LayerMask.GetMask("Platform"));
+            Vector2.down, 1.1f, LayerMask.GetMask("Platform"));
 
         Debug.DrawRay(transform.position,
                 Vector2.down, Color.magenta);
@@ -112,17 +124,18 @@ public class PlayerController : MonoBehaviour
             canJump = false;
         }
 
+        // Move player
         if (isPlayerMoving)
         {
             moveDirection = move.ReadValue<float>();
-            GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed * moveDirection, GetComponent<Rigidbody2D>().velocity.y);
-            
-}
+            GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed * moveDirection, GetComponent<Rigidbody2D>().velocity.y);  
+        }
         else
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
         }
 
+        // Jump player
         if(isJumping && canJump)
         {
             canJump = false;
@@ -130,6 +143,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
         }
 
+        // Player presses "E"
         if(isEquiping)
         {
             isEquiping = false;
@@ -169,6 +183,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // Player presses "Q"
         if(isDequiping)
         {
             isDequiping = false;
@@ -186,7 +201,7 @@ public class PlayerController : MonoBehaviour
 
         CheckIfInLight();
 
-
+        // Handles death of player
         if(isInLight && timeTillDead <= 1f)
         {
             timeTillDead += Time.deltaTime;
@@ -208,7 +223,7 @@ public class PlayerController : MonoBehaviour
         // Activating action map
         playerInput.currentActionMap.Enable();
 
-        // reading in inputs
+        // Reading in inputs
         move = playerInput.currentActionMap.FindAction("Move");
         jump = playerInput.currentActionMap.FindAction("Jump");
         equip = playerInput.currentActionMap.FindAction("Equip");
@@ -271,12 +286,13 @@ public class PlayerController : MonoBehaviour
         restart.started -= Restart_started;
     }
 
-   
-   
-
+    /// <summary>
+    /// Goes through light sources and determines if the player is in light
+    /// </summary>
     private void CheckIfInLight()
     {
         bool output = false;
+
         for(int i = 0; i < sourcesInScene.Length; ++i)
         {
             if(sourcesInScene[i].playerIsInLight)
@@ -287,7 +303,5 @@ public class PlayerController : MonoBehaviour
 
         isInLight = output;
     }
-
-
 }
 

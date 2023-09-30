@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+/*****************************************************************************
+// File Name : Holder.cs
+// Author : Sam Dwyer
+//
+// Brief Description : Allows the holder to be able to hold a light source
+*****************************************************************************/
 using UnityEngine;
 
 public class Holder : MonoBehaviour
@@ -16,6 +20,7 @@ public class Holder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the holder has a child ("light")
         if(gameObject.transform.childCount == 1)
         {
             gameObject.transform.GetChild(0).gameObject.transform.localPosition = new Vector2(0, 0);

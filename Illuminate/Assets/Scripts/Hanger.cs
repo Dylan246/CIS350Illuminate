@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+/*****************************************************************************
+// File Name : Hanger.cs
+// Author : Sam Dwyer
+//
+// Brief Description : Holds a light source in the scene and keeps its functionality
+*****************************************************************************/
 using UnityEngine;
 
 public class Hanger : MonoBehaviour
