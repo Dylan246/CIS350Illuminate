@@ -5,6 +5,9 @@
 // Brief Description : Holds the player inputs, the various triggers that the player can interact with,
 //                     player movement, player interactions with lights, and death
 *****************************************************************************/
+using JetBrains.Annotations;
+using System.Collections;
+using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -52,6 +55,10 @@ public class PlayerController : MonoBehaviour
     public Holder playerHolder;
     private Animator stickman;
 
+    // Audio variables
+    public AudioManager audioManager;
+    bool playDeath = true; // Ensure death sound only plays once
+
     // Grace period in darkness
     [SerializeField] [Range(0, 1f)] private float timeTillDead = 1f;
 
@@ -65,13 +72,20 @@ public class PlayerController : MonoBehaviour
         EnableInputs();
 
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
-
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
         /*stickman = GetComponent<Animator>();
         stickman.SetBool("move_player", isPlayerMoving);
         stickman.SetBool("jump_player", isJumping);*/
 
         isPlayerMoving = false;
         isJumping = false;
+    }
+
+    //Delays reloading the scene by a few seconds (allows for death sound to play, time for a pop up message)
+    private IEnumerator WaitForSceneLoad()
+    {
+        yield return new WaitForSeconds(2); //Wait 2 seconds before restarting scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     /// <summary>
@@ -82,7 +96,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "PointOfDeath")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (playDeath == true) //Prevent death sound from being played twice (in case player dies in darkness and also falls)
+            {
+                playDeath = false;
+                audioManager.playDeath();
+            }
+            StartCoroutine(WaitForSceneLoad()); //Restart scene
         }
 
         if(collision.tag == "Hanger")
@@ -138,6 +157,7 @@ public class PlayerController : MonoBehaviour
         // Jump player
         if(isJumping && canJump)
         {
+            audioManager.playJump(); //Play jump sound effect
             canJump = false;
             isJumping = false;
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
@@ -195,7 +215,6 @@ public class PlayerController : MonoBehaviour
                 HeldItem.gameObject.GetComponent<BoxCollider2D>().enabled = true;
                 canPickUp = HeldItem;
                 HeldItem = null;
-                
             }
         }
 
@@ -213,7 +232,12 @@ public class PlayerController : MonoBehaviour
 
         if(timeTillDead <= 0f)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (playDeath == true) //Prevent death sound from being spammed
+            {
+                playDeath = false;
+                audioManager.playDeath();
+            }
+            StartCoroutine(WaitForSceneLoad()); //Restart scene
         }
     }
 
@@ -268,11 +292,13 @@ public class PlayerController : MonoBehaviour
     private void Move_canceled(InputAction.CallbackContext obj)
     {
         isPlayerMoving = false;
+        audioManager.playWalk(false); //Stop walking sound effect
     }
 
     private void Move_started(InputAction.CallbackContext obj)
     {
         isPlayerMoving = true;
+        audioManager.playWalk(true); //Play walking sound effect
     }
 
     public void OnDestroy()

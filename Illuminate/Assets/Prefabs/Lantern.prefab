@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightType: 1
+  doesItFlicker: 0
+  startTurnedOff: 0
   playerIsInLight: 0
 --- !u!114 &528135263095252472
 MonoBehaviour:
