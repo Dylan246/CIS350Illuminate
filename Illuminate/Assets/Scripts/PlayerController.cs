@@ -11,6 +11,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
@@ -53,6 +54,8 @@ public class PlayerController : MonoBehaviour
     // Animation variables
     public Holder playerHolder;
     private Animator stickman;
+    [SerializeField] private GameObject CharacterSprites;
+    [SerializeField] private SpriteRenderer CharacterSpriteRenderer;
 
     // Audio variables
     public AudioManager audioManager;
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
         audioManager = GameObject.FindObjectOfType<AudioManager>();
+        CharacterSpriteRenderer = GetComponent<SpriteRenderer>();
         /*stickman = GetComponent<Animator>();
         stickman.SetBool("move_player", isPlayerMoving);
         stickman.SetBool("jump_player", isJumping);*/
@@ -150,6 +154,10 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection = move.ReadValue<float>();
             GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed * moveDirection, GetComponent<Rigidbody2D>().velocity.y);  
+            if(moveDirection == -1)
+            {
+                CharacterSpriteRenderer.flipX = true;
+            }
         }
         else
         {
@@ -163,6 +171,11 @@ public class PlayerController : MonoBehaviour
             canJump = false;
             isJumping = false;
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+            if(hit == true)
+            {
+                CharacterSprites.GetComponent<Animator>().SetBool("jump_player", false);
+            }
+            
         }
 
         // Player presses "E"
@@ -273,6 +286,7 @@ public class PlayerController : MonoBehaviour
     private void Jump_started(InputAction.CallbackContext obj)
     {
         isJumping = true;
+        CharacterSprites.GetComponent<Animator>().SetBool("jump_player", true);
     }
 
     private void Restart_started(InputAction.CallbackContext obj)
@@ -299,12 +313,14 @@ public class PlayerController : MonoBehaviour
     {
         isPlayerMoving = false;
         audioManager.playWalk(false); //Stop walking sound effect
+        CharacterSprites.GetComponent<Animator>().SetBool("move_player", false);
     }
 
     private void Move_started(InputAction.CallbackContext obj)
     {
         isPlayerMoving = true;
         audioManager.playWalk(true); //Play walking sound effect
+        CharacterSprites.GetComponent<Animator>().SetBool("move_player", true);
     }
 
     public void OnDestroy()
