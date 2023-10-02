@@ -5,12 +5,11 @@
 // Brief Description : Holds the player inputs, the various triggers that the player can interact with,
 //                     player movement, player interactions with lights, and death
 *****************************************************************************/
-using JetBrains.Annotations;
 using System.Collections;
-using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -65,6 +64,8 @@ public class PlayerController : MonoBehaviour
     // The light sources in the scene
     [SerializeField] private LightSource[] sourcesInScene;
 
+    public Slider healthSlider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,12 +97,13 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "PointOfDeath")
         {
-            if (playDeath == true) //Prevent death sound from being played twice (in case player dies in darkness and also falls)
+            /*if (playDeath == true) //Prevent death sound from being played twice (in case player dies in darkness and also falls)
             {
                 playDeath = false;
                 audioManager.playDeath();
             }
-            StartCoroutine(WaitForSceneLoad()); //Restart scene
+            StartCoroutine(WaitForSceneLoad()); //Restart scene*/
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if(collision.tag == "Hanger")
@@ -221,7 +223,7 @@ public class PlayerController : MonoBehaviour
         CheckIfInLight();
 
         // Handles death of player
-        if(isInLight && timeTillDead <= 1f)
+        if(isInLight /*&& timeTillDead <= 1f*/)
         {
             timeTillDead += Time.deltaTime;
         }
@@ -232,13 +234,17 @@ public class PlayerController : MonoBehaviour
 
         if(timeTillDead <= 0f)
         {
-            if (playDeath == true) //Prevent death sound from being spammed
+            /*if (playDeath == true) //Prevent death sound from being spammed
             {
                 playDeath = false;
+                
                 audioManager.playDeath();
             }
-            StartCoroutine(WaitForSceneLoad()); //Restart scene
+            StartCoroutine(WaitForSceneLoad()); //Restart scene*/
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        healthSlider.value = timeTillDead;
     }
 
     // function that enables action inputs to be read
