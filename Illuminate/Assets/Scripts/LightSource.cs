@@ -49,7 +49,7 @@ public class LightSource : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(LightType == SourceType.Sphere)
         {
@@ -117,6 +117,34 @@ public class LightSource : MonoBehaviour
         if(collision.gameObject.name == "Player")
         {
             playerIsInLight = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position,
+            player.transform.position - transform.position, radius, ~LayerMask.GetMask("Light"));
+
+            Debug.DrawRay(transform.position,
+                    player.transform.position - transform.position, Color.red);
+
+            if (hit == true)
+            {
+                if (hit.collider.tag == "Player")
+                {
+                    playerIsInLight = true;
+                }
+                else
+                {
+                    playerIsInLight = false;
+                }
+            }
+            else
+            {
+                playerIsInLight = false;
+            }
         }
     }
 

@@ -232,11 +232,14 @@ public class PlayerController : MonoBehaviour
                 HeldItem = null;
             }
         }
+    }
 
+    private void Update()
+    {
         CheckIfInLight();
 
         // Handles death of player
-        if(isInLight /*&& timeTillDead <= 1f*/)
+        if (isInLight && timeTillDead <= 1f)
         {
             timeTillDead += Time.deltaTime;
         }
@@ -245,7 +248,7 @@ public class PlayerController : MonoBehaviour
             timeTillDead -= Time.deltaTime;
         }
 
-        if(timeTillDead <= 0f)
+        if (timeTillDead <= 0f)
         {
             /*if (playDeath == true) //Prevent death sound from being spammed
             {
