@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     // Audio variables
     public AudioManager audioManager;
-    bool playDeath = true; // Ensure death sound only plays once
+    //bool playDeath = true; // Ensure death sound only plays once
 
     // Grace period in darkness
     [SerializeField] [Range(0, 1f)] private float timeTillDead = 1f;
