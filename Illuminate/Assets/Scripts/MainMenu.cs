@@ -22,25 +22,20 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level 1");
     }
-    //Starts Game
+    //Starts Level 2
     public void OnButtonStartLevel2()
     {
         SceneManager.LoadScene("Level 2");
     }
-    //Starts Game
+    //Starts Level 3
     public void OnButtonStartLevel3()
     {
         SceneManager.LoadScene("Level 3");
     }
-    //Starts Game
+    //Starts Level 4
     public void OnButtonStartLevel4()
     {
         SceneManager.LoadScene("Level 4");
-    }
-    //Starts Game
-    public void OnButtonStartLevel5()
-    {
-        SceneManager.LoadScene("Level 5");
     }
 
 
