@@ -298,7 +298,7 @@ public class PlayerController : MonoBehaviour
 
     private void Quit_started(InputAction.CallbackContext obj)
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 
     private void Equip_started(InputAction.CallbackContext obj)
