@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
 
     // Audio variables
     public AudioManager audioManager;
-    //bool playDeath = true; // Ensure death sound only plays once
 
     // Grace period in darkness
     [SerializeField] [Range(0, 1f)] private float timeTillDead = 1f;
@@ -77,10 +76,6 @@ public class PlayerController : MonoBehaviour
 
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
         audioManager = GameObject.FindObjectOfType<AudioManager>();
-        CharacterSpriteRenderer = GetComponent<SpriteRenderer>();
-        /*stickman = GetComponent<Animator>();
-        stickman.SetBool("move_player", isPlayerMoving);
-        stickman.SetBool("jump_player", isJumping);*/
 
         isPlayerMoving = false;
         isJumping = false;
@@ -153,10 +148,15 @@ public class PlayerController : MonoBehaviour
         if (isPlayerMoving)
         {
             moveDirection = move.ReadValue<float>();
+            print(moveDirection);
             GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed * moveDirection, GetComponent<Rigidbody2D>().velocity.y);  
             if(moveDirection == -1)
             {
                 CharacterSpriteRenderer.flipX = true;
+            }
+            if(moveDirection == 1)
+            {
+                CharacterSpriteRenderer.flipX = false;
             }
         }
         else
@@ -175,7 +175,6 @@ public class PlayerController : MonoBehaviour
             {
                 CharacterSprites.GetComponent<Animator>().SetBool("jump_player", false);
             }
-            
         }
 
         // Player presses "E"
