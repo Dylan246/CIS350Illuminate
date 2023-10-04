@@ -114,11 +114,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3099
-        width: 387
+        y: 3098
+        width: 386
         height: 948
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: stickmanJones_1
       rect:
         serializedVersion: 2
-        x: 391
-        y: 3099
+        x: 390
+        y: 3098
         width: 388
         height: 948
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,12 +155,12 @@ TextureImporter:
       name: stickmanJones_2
       rect:
         serializedVersion: 2
-        x: 785
-        y: 3099
-        width: 388
+        x: 782
+        y: 3098
+        width: 392
         height: 948
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,12 +176,12 @@ TextureImporter:
       name: stickmanJones_3
       rect:
         serializedVersion: 2
-        x: 1177
-        y: 3099
+        x: 1178
+        y: 3098
         width: 388
         height: 948
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: stickmanJones_4
       rect:
         serializedVersion: 2
-        x: 1571
-        y: 3099
+        x: 1570
+        y: 3098
         width: 388
-        height: 974
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 976
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: stickmanJones_5
       rect:
         serializedVersion: 2
-        x: 1963
-        y: 3099
+        x: 1962
+        y: 3098
         width: 388
-        height: 974
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 976
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: stickmanJones_6
       rect:
         serializedVersion: 2
-        x: 2357
-        y: 3099
-        width: 388
-        height: 974
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2354
+        y: 3098
+        width: 392
+        height: 976
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: stickmanJones_7
       rect:
         serializedVersion: 2
-        x: 2749
-        y: 3099
+        x: 2750
+        y: 3098
         width: 388
-        height: 974
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 976
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: stickmanJones_8
       rect:
         serializedVersion: 2
-        x: 3141
-        y: 3101
-        width: 390
-        height: 995
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3142
+        y: 3098
+        width: 388
+        height: 998
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: stickmanJones_9
       rect:
         serializedVersion: 2
-        x: 3535
-        y: 3096
-        width: 387
-        height: 1000
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3534
+        y: 3098
+        width: 388
+        height: 998
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,12 +323,12 @@ TextureImporter:
       name: stickmanJones_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2095
-        width: 387
-        height: 1000
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3926
+        y: 3098
+        width: 392
+        height: 998
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: stickmanJones_11
       rect:
         serializedVersion: 2
-        x: 391
-        y: 2095
+        x: 4322
+        y: 3098
         width: 388
-        height: 1000
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 998
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -365,12 +365,12 @@ TextureImporter:
       name: stickmanJones_12
       rect:
         serializedVersion: 2
-        x: 785
-        y: 2095
+        x: 4714
+        y: 3098
         width: 388
         height: 996
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -386,12 +386,12 @@ TextureImporter:
       name: stickmanJones_13
       rect:
         serializedVersion: 2
-        x: 1177
-        y: 2095
+        x: 5106
+        y: 3098
         width: 388
         height: 996
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -407,12 +407,12 @@ TextureImporter:
       name: stickmanJones_14
       rect:
         serializedVersion: 2
-        x: 1571
-        y: 2095
-        width: 388
+        x: 5498
+        y: 3098
+        width: 392
         height: 996
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -428,12 +428,12 @@ TextureImporter:
       name: stickmanJones_15
       rect:
         serializedVersion: 2
-        x: 1963
-        y: 2095
+        x: 5894
+        y: 3098
         width: 388
         height: 996
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -449,12 +449,12 @@ TextureImporter:
       name: stickmanJones_16
       rect:
         serializedVersion: 2
-        x: 2361
-        y: 2165
-        width: 518
-        height: 928
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 6286
+        y: 3170
+        width: 516
+        height: 926
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -470,12 +470,12 @@ TextureImporter:
       name: stickmanJones_17
       rect:
         serializedVersion: 2
-        x: 2877
-        y: 2165
+        x: 6806
+        y: 3170
         width: 516
-        height: 928
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 926
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -491,12 +491,12 @@ TextureImporter:
       name: stickmanJones_18
       rect:
         serializedVersion: 2
-        x: 3397
-        y: 2164
-        width: 516
-        height: 929
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 7326
+        y: 3172
+        width: 514
+        height: 924
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -513,11 +513,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1161
-        width: 515
-        height: 930
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 2166
+        width: 514
+        height: 928
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -533,12 +533,12 @@ TextureImporter:
       name: stickmanJones_20
       rect:
         serializedVersion: 2
-        x: 533
-        y: 1129
-        width: 494
-        height: 952
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 534
+        y: 2130
+        width: 492
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -554,12 +554,12 @@ TextureImporter:
       name: stickmanJones_21
       rect:
         serializedVersion: 2
-        x: 1053
-        y: 1129
-        width: 494
-        height: 952
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1054
+        y: 2130
+        width: 492
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -575,12 +575,12 @@ TextureImporter:
       name: stickmanJones_22
       rect:
         serializedVersion: 2
-        x: 1575
-        y: 1129
-        width: 494
-        height: 952
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1574
+        y: 2130
+        width: 496
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -596,12 +596,12 @@ TextureImporter:
       name: stickmanJones_23
       rect:
         serializedVersion: 2
-        x: 2095
-        y: 1129
-        width: 494
-        height: 952
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2094
+        y: 2130
+        width: 496
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -617,12 +617,12 @@ TextureImporter:
       name: stickmanJones_24
       rect:
         serializedVersion: 2
-        x: 2603
-        y: 1251
+        x: 2602
+        y: 2254
         width: 660
-        height: 816
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -638,12 +638,12 @@ TextureImporter:
       name: stickmanJones_25
       rect:
         serializedVersion: 2
-        x: 3283
-        y: 1253
-        width: 660
-        height: 814
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 7548
+        y: 2169
+        width: 486
+        height: 925
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -659,12 +659,12 @@ TextureImporter:
       name: stickmanJones_26
       rect:
         serializedVersion: 2
-        x: 17
-        y: 221
-        width: 646
-        height: 880
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3282
+        y: 2254
+        width: 660
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -680,12 +680,12 @@ TextureImporter:
       name: stickmanJones_27
       rect:
         serializedVersion: 2
-        x: 699
-        y: 221
-        width: 644
-        height: 880
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3982
+        y: 2190
+        width: 648
+        height: 884
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -701,12 +701,12 @@ TextureImporter:
       name: stickmanJones_28
       rect:
         serializedVersion: 2
-        x: 1425
-        y: 207
-        width: 610
-        height: 916
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 4666
+        y: 2190
+        width: 644
+        height: 884
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -722,12 +722,12 @@ TextureImporter:
       name: stickmanJones_29
       rect:
         serializedVersion: 2
-        x: 2105
-        y: 207
+        x: 5390
+        y: 2178
         width: 612
         height: 916
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -743,12 +743,12 @@ TextureImporter:
       name: stickmanJones_30
       rect:
         serializedVersion: 2
-        x: 2825
-        y: 219
-        width: 564
-        height: 904
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 6074
+        y: 2178
+        width: 608
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -764,12 +764,12 @@ TextureImporter:
       name: stickmanJones_31
       rect:
         serializedVersion: 2
-        x: 3506
-        y: 217
-        width: 565
-        height: 906
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 6870
+        y: 2170
+        width: 488
+        height: 924
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -777,6 +777,90 @@ TextureImporter:
       bones: []
       spriteID: 237b0ab1e7a9a2846b89ace1d856f1e7
       internalID: -851573721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_32
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1218
+        width: 612
+        height: 908
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dca7b7df711084449577e8b6aeee533
+      internalID: -727006904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_33
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1218
+        width: 612
+        height: 908
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af98fd9eaa405941a5c5c0c6f4c0a05
+      internalID: -308715113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_34
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 1226
+        width: 648
+        height: 880
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 909dacd3e710ed04dbedd89ad6eb16f7
+      internalID: 350462951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stickmanJones_35
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 1226
+        width: 648
+        height: 880
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99792d3ad0653ca4ead7e41a0f8e25ec
+      internalID: -1271354946
       vertices: []
       indices: 
       edges: []
@@ -818,6 +902,10 @@ TextureImporter:
       stickmanJones_3: -562291547
       stickmanJones_30: 1690096636
       stickmanJones_31: -851573721
+      stickmanJones_32: -727006904
+      stickmanJones_33: -308715113
+      stickmanJones_34: 350462951
+      stickmanJones_35: -1271354946
       stickmanJones_4: -1549272026
       stickmanJones_5: -713644863
       stickmanJones_6: 251405005
