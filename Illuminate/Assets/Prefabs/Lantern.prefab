@@ -188,6 +188,9 @@ MonoBehaviour:
   doesItFlicker: 0
   startTurnedOff: 0
   playerIsInLight: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 520
 --- !u!114 &528135263095252472
 MonoBehaviour:
   m_ObjectHideFlags: 0

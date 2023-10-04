@@ -23,6 +23,8 @@ public class LightSource : MonoBehaviour
 
     public bool playerIsInLight = false;
 
+    public LayerMask layerMask;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +66,7 @@ public class LightSource : MonoBehaviour
     bool IsSphereDetectingPlayer()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            player.transform.position - transform.position, radius, ~LayerMask.GetMask("Light"));
+            player.transform.position - transform.position, radius, ~layerMask);
 
         Debug.DrawRay(transform.position,
             player.transform.position - transform.position, Color.red);
@@ -89,7 +91,7 @@ public class LightSource : MonoBehaviour
         if(collision.gameObject.name == "Player")
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            player.transform.position - transform.position, radius, ~LayerMask.GetMask("Light"));
+            player.transform.position - transform.position, radius, ~layerMask);
 
             Debug.DrawRay(transform.position,
                     player.transform.position - transform.position, Color.red);
@@ -125,7 +127,7 @@ public class LightSource : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            player.transform.position - transform.position, radius, ~LayerMask.GetMask("Light"));
+            player.transform.position - transform.position, radius, ~layerMask);
 
             Debug.DrawRay(transform.position,
                     player.transform.position - transform.position, Color.red);

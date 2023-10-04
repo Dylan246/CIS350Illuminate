@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
 
     public Slider healthSlider;
 
+    public LayerMask jumpMask;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -130,7 +132,7 @@ public class PlayerController : MonoBehaviour
     {
         // Detection for when a player is on ground (resets jump)
         RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            Vector2.down, 1.1f, LayerMask.GetMask("Platform"));
+            Vector2.down, 1.1f, jumpMask);
 
         Debug.DrawRay(transform.position,
                 Vector2.down, Color.magenta);

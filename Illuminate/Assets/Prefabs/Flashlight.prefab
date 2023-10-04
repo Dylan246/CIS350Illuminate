@@ -188,7 +188,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightType: 0
+  doesItFlicker: 0
+  startTurnedOff: 0
   playerIsInLight: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 520
 --- !u!60 &4399415193576207946
 PolygonCollider2D:
   m_ObjectHideFlags: 0
