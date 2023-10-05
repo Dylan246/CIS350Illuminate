@@ -66,7 +66,7 @@ public class LightSource : MonoBehaviour
     bool IsSphereDetectingPlayer()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            player.transform.position - transform.position, radius, ~layerMask);
+            player.transform.position - transform.position, radius, layerMask);
 
         Debug.DrawRay(transform.position,
             player.transform.position - transform.position, Color.red);
@@ -91,7 +91,7 @@ public class LightSource : MonoBehaviour
         if(collision.gameObject.name == "Player")
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position,
-            player.transform.position - transform.position, radius, ~layerMask);
+            player.transform.position - transform.position, radius, layerMask);
 
             Debug.DrawRay(transform.position,
                     player.transform.position - transform.position, Color.red);
@@ -122,15 +122,16 @@ public class LightSource : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
+
             RaycastHit2D hit = Physics2D.Raycast(transform.position,
             player.transform.position - transform.position, radius, ~layerMask);
 
             Debug.DrawRay(transform.position,
-                    player.transform.position - transform.position, Color.red);
+                    player.transform.position - transform.position, Color.cyan);
 
             if (hit == true)
             {
@@ -148,7 +149,7 @@ public class LightSource : MonoBehaviour
                 playerIsInLight = false;
             }
         }
-    }
+    }*/
 
     /// <summary>
     /// Will turn off and on the light source

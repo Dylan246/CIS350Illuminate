@@ -98,12 +98,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "PointOfDeath")
         {
-            /*if (playDeath == true) //Prevent death sound from being played twice (in case player dies in darkness and also falls)
-            {
-                playDeath = false;
-                audioManager.playDeath();
-            }
-            StartCoroutine(WaitForSceneLoad()); //Restart scene*/
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
@@ -150,7 +144,6 @@ public class PlayerController : MonoBehaviour
         if (isPlayerMoving)
         {
             moveDirection = move.ReadValue<float>();
-            print(moveDirection);
             GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed * moveDirection, GetComponent<Rigidbody2D>().velocity.y);  
             if(moveDirection == -1)
             {
@@ -190,7 +183,6 @@ public class PlayerController : MonoBehaviour
                 HeldItem = hanger.GetComponent<Hanger>().holdingLight;
                 hanger.GetComponent<Hanger>().holdingLight = null;
                 HeldItem.gameObject.transform.SetParent(playerHolder.gameObject.transform);
-                HeldItem.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 HeldItem.gameObject.transform.localPosition = new Vector3(0, 0, 0);
                 HeldItem.gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
             }
@@ -200,7 +192,6 @@ public class PlayerController : MonoBehaviour
                 HeldItem.gameObject.transform.SetParent(hanger.transform);
                 HeldItem.gameObject.transform.localPosition = new Vector3(0, 0, 0);
                 HeldItem.gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
-                HeldItem.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 hanger.GetComponent<Hanger>().holdingLight = HeldItem;
                 HeldItem = null;
             }
@@ -214,8 +205,6 @@ public class PlayerController : MonoBehaviour
                 HeldItem.gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
                 HeldItem.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 HeldItem.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-                HeldItem.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-                HeldItem.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
         }
 
@@ -225,7 +214,6 @@ public class PlayerController : MonoBehaviour
             isDequiping = false;
             if(HeldItem != null)
             {
-                HeldItem.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
                 HeldItem.gameObject.transform.SetParent(null);
                 HeldItem.gameObject.GetComponent<CircleCollider2D>().enabled = true;
                 HeldItem.gameObject.GetComponent<BoxCollider2D>().enabled = true;
@@ -251,13 +239,6 @@ public class PlayerController : MonoBehaviour
 
         if (timeTillDead <= 0f)
         {
-            /*if (playDeath == true) //Prevent death sound from being spammed
-            {
-                playDeath = false;
-                
-                audioManager.playDeath();
-            }
-            StartCoroutine(WaitForSceneLoad()); //Restart scene*/
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
