@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private InputAction dequip;
     private InputAction restart;
     private InputAction quit;
+    private InputAction pause;
 
     // Variable to check if player is moving or not
     private bool isPlayerMoving;
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LightSource[] sourcesInScene;
 
     public Slider healthSlider;
-
+    public GameObject pauseMenu;
     public LayerMask jumpMask;
 
     // Start is called before the first frame update
@@ -258,6 +259,7 @@ public class PlayerController : MonoBehaviour
         dequip = playerInput.currentActionMap.FindAction("Dequip");
         quit = playerInput.currentActionMap.FindAction("Quit");
         restart = playerInput.currentActionMap.FindAction("Restart");
+        pause = playerInput.currentActionMap.FindAction("Pause");
 
         move.started += Move_started;
         move.canceled += Move_canceled;
@@ -266,6 +268,7 @@ public class PlayerController : MonoBehaviour
         dequip.started += Dequip_started;
         quit.started += Quit_started;
         restart.started += Restart_started;
+        pause.started += Pause_started;
     }
 
     private void Jump_started(InputAction.CallbackContext obj)
@@ -276,12 +279,26 @@ public class PlayerController : MonoBehaviour
 
     private void Restart_started(InputAction.CallbackContext obj)
     {
+        Time.timeScale = 1; //In case you're in the pause menu and restart game
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void Quit_started(InputAction.CallbackContext obj)
     {
         SceneManager.LoadScene(0);
+    }
+
+    private void Pause_started(InputAction.CallbackContext obj)
+    {
+        if (SceneManager.GetSceneByBuildIndex(0).isLoaded) //Main menu is visible so map ESC to quit game
+        {
+            Application.Quit(); //Quit game
+        }
+        else //Otherwise show pause menu
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     private void Equip_started(InputAction.CallbackContext obj)
@@ -317,6 +334,7 @@ public class PlayerController : MonoBehaviour
         dequip.started -= Dequip_started;
         quit.started -= Quit_started;
         restart.started -= Restart_started;
+        pause.started -= Pause_started;
     }
 
     /// <summary>
