@@ -4,19 +4,16 @@
 //
 // Brief Description : Controls the Main Menu
 *****************************************************************************/
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject mainScreen;
     [SerializeField] GameObject levelScreen;
     [SerializeField] GameObject creditScreen;
-    
+    [SerializeField] GameObject howToPlayScreen;
+
     //Starts Game
     public void OnButtonStartGame()
     {
@@ -65,6 +62,20 @@ public class MainMenu : MonoBehaviour
     {
         levelScreen.SetActive(false);
         mainScreen.SetActive(true);
+    }
+
+    // Opens How
+    public void OnButtonOpenHowToPlay()
+    {
+        mainScreen.SetActive(false);
+        howToPlayScreen.SetActive(true);
+    }
+
+    // Closes How
+    public void OnButtonCloseHowToPlay()
+    {
+        mainScreen.SetActive(true);
+        howToPlayScreen.SetActive(false);
     }
 
     //Closes Game
