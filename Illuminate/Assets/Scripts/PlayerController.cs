@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject CharacterSprites;
     [SerializeField] private SpriteRenderer CharacterSpriteRenderer;
 
-    // Audio variables
+    // Audiomanager variable
     public AudioManager audioManager;
 
     // Grace period in darkness
@@ -74,21 +74,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         // Turn on all inputs
         EnableInputs();
 
         sourcesInScene = GameObject.FindObjectsOfType<LightSource>();
-        audioManager = GameObject.FindObjectOfType<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         isPlayerMoving = false;
         isJumping = false;
-    }
-
-    //Delays reloading the scene by a few seconds (allows for death sound to play, time for a pop up message)
-    private IEnumerator WaitForSceneLoad()
-    {
-        yield return new WaitForSeconds(2); //Wait 2 seconds before restarting scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     /// <summary>
