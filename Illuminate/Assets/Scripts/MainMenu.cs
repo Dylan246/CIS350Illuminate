@@ -32,6 +32,20 @@ public class MainMenu : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
     }
 
+    //Quit game from main menu using ESC
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            int buildIndex = currentScene.buildIndex;
+            if (buildIndex == 0) //Make sure we are in the main menu when we quit
+            {
+                OnButtonQuit(); //Quit game
+            }
+        }
+    }
+
     //Starts Game
     public void OnButtonStartGame()
     {
@@ -162,4 +176,6 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Exiting");
         Application.Quit();
     }
+
+    
 }

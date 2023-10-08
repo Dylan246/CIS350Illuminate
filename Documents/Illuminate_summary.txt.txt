@@ -1,0 +1,11 @@
+Game Name: Illuminate
+
+Genre: Puzzle
+
+Description: Illuminate is a puzzle platformer that’s targeted for all audiences. It takes place in a dark environment that the player must traverse through using an abundance of light sources scattered throughout each stage. All that the player needs to do is to get to each endpoint of each sublevel to complete each stage. Players should feel rewarded when completing puzzles and intrigued to keep playing to see what new puzzle methods can be discovered.
+
+Created by:
+Dylan Gazda - Producer
+Ryan Egan - Designer/Artist
+Sam Dwyer - Designer/Programmer
+Brian Hartwig - Programmer/Artist

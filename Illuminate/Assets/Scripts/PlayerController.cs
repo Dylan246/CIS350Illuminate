@@ -279,20 +279,13 @@ public class PlayerController : MonoBehaviour
 
     private void Quit_started(InputAction.CallbackContext obj)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0); //Return to main menu
     }
 
     private void Pause_started(InputAction.CallbackContext obj)
     {
-        if (SceneManager.GetSceneByBuildIndex(0).isLoaded) //Main menu is visible so map ESC to quit game
-        {
-            Application.Quit(); //Quit game
-        }
-        else //Otherwise show pause menu
-        {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
-        }
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     private void Equip_started(InputAction.CallbackContext obj)
