@@ -1,3 +1,10 @@
+/*****************************************************************************
+// File Name : RotatePlatform.cs
+// Author : Dylan Gazda
+//
+// Brief Description : Manages the rotation of certain platforms
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +15,6 @@ public class RotatePlatform : MonoBehaviour
 {
     [SerializeField] private GameObject rotatingPlatform;
     public int rotationalSpeed; //Defined in each object so that it can vary (baseline value 25f)
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Not being used as of now
-    }
 
     // Update is called once per frame
     void Update()

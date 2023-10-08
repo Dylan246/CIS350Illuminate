@@ -129,10 +129,4 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    //Change music/sfx button text if the music is muted/unmuted
-    public void changeButtonText()
-    {
-
-    }
-
 }

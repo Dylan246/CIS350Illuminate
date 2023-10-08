@@ -64,10 +64,10 @@ public class AudioManager : MonoBehaviour
     //Mute or unmute background music
     public void playMusic()
     {
-        if (isMusicplaying == true)
+        if (isMusicplaying == true) //If music is playing, then mute it 
         {
-            isMusicplaying = false;
-            am.bgMusic.volume = 0;
+            isMusicplaying = false; 
+            am.bgMusic.volume = 0; 
         }
         else
         {

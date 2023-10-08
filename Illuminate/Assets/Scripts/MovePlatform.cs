@@ -14,7 +14,6 @@ public class MovePlatform : MonoBehaviour
     public float distance; //Distance will be defined in each object so that it can be varied (baseline value 3)
     public int speed; //Also defined in each object so it can be varied (baseline value 1f)
 
-
     // Start is called before the first frame update
     void Start()
     {
