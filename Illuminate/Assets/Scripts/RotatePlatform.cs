@@ -9,7 +9,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 public class RotatePlatform : MonoBehaviour
 {
